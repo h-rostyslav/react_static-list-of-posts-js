@@ -13,20 +13,16 @@ function commentsById(postId) {
   return comments.filter(comment => comment.postId === postId);
 }
 
-
-
 export const postFromServer = posts.map(post => ({
   ...post,
   user: userById(post.userId),
   comments: commentsById(post.id),
 }));
 
-
-
 export const App = () => (
   <section className="App">
     <h1 className="App__title">Static list of posts</h1>
 
-    <PostList posts={ postFromServer} />
+    <PostList posts={postFromServer} />
   </section>
 );

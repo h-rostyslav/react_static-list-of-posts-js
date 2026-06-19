@@ -1,10 +1,11 @@
-import { PostInfo } from "../PostInfo";
+import { PostInfo } from '../PostInfo';
 
-export const PostList = ({posts}) => (
+export const PostList = ({ posts }) => (
   <div className="PostList">
     {posts.map(post => (
-      <PostInfo key={ post.id} post={post} />
+      <div key={post.id}>
+        <PostInfo post={post} />
+      </div>
     ))}
-
   </div>
 );
